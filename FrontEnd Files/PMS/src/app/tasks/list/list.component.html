@@ -1,0 +1,36 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Tasks</h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/tasks/create/" class="btn btn-success btn-sm">Create New</a>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-sm">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Assign To</th>
+      <th>Created Date</th>
+      <th>End Date</th>
+      <th>Project</th>
+      <th width="200px"></th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.name }}</td>
+      <td>{{ task.assignTo }}</td>
+      <td>{{ task.createdDate }}</td>
+      <td>{{ task.endDate }}</td>
+      <td>{{ task.project?.name }}</td>
+      <td align="center">
+        <a href="#" [routerLink]="['/tasks/', task.id, 'details']" class="btn btn-info btn-sm">View</a> | 
+        <a href="#" [routerLink]="['/tasks/', task.id, 'edit']" class="btn btn-primary btn-sm">Edit</a>
+        <!--<button type="button" (click)="deleteTask(task.id)" class="btn btn-danger btn-sm">Delete</button>-->
+      </td>
+    </tr>
+  </table>
+</div>

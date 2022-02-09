@@ -1,0 +1,24 @@
+<div class="container">
+  <br />
+  <h3>Project Details</h3>
+  <br />
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+          <h4>{{ project.name }}</h4>
+        </div>
+        <div class="col text-right">
+          <a href="#" routerLink="/projects/list" class="btn btn-secondary btn-sm">Back To Projects List</a>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Id:</b> {{ project.id }}</li>
+      <li class="list-group-item"><b>Name:</b> {{ project.name }}</li>
+      <li class="list-group-item"><b>Manager:</b> {{ project.assignTo }}</li>
+      <li class="list-group-item"><b>End Date:</b> {{ project.endDate }}</li>
+      <li class="list-group-item"><b>Description:</b> {{ project.description }}</li>
+    </ul>
+  </div>
+</div>
